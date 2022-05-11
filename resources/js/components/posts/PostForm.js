@@ -1,10 +1,35 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from "react";
+import propTypes from "prop-types";
+import { connect } from "react-redux";
+import { addPost } from "../../actions/post";
 
-const PostForm = () => {
-  return (
-    <Fragment>
+const PostForm = ({ addPost }) => {
+    const [formData, setFormData] = useState(
+        {
+            post: "",
+            username: ""
+        },
+        []
+    );
+    const { username, post } = formData;
+
+    const onChange = e =>
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+
+    const onSubmit = e => {
+        e.preventDefault();
+        addPost(formData);
+        setFormData({ username: "", post: "" });
+    };
+
+    return (
+        <Fragment>
             <div className="mb-5">
-                <form>
+                <form
+                    onSubmit={e => {
+                        onSubmit(e);
+                    }}
+                >
                     <div className="">
                         <div className="input-field col s12">
                             <i className="material-icons prefix">
@@ -15,8 +40,8 @@ const PostForm = () => {
                                 type="text"
                                 className="validate"
                                 name="username"
-                               
-                                
+                                value={username}
+                                onChange={e => onChange(e)}
                             />
                             <label htmlFor="icon_prefix">Enter your Name</label>
                         </div>
@@ -27,8 +52,8 @@ const PostForm = () => {
                                 id="textarea1"
                                 className="materialize-textarea"
                                 name="post"
-                                
-                                
+                                value={post}
+                                onChange={e => onChange(e)}
                             ></textarea>
 
                             <label htmlFor="textarea1">Enter a Post...</label>
@@ -45,7 +70,10 @@ const PostForm = () => {
                 </form>
             </div>
         </Fragment>
-  )
-}
+    );
+};
+PostForm.propTypes = {
+    addPost: propTypes.func.isRequired
+};
 
-export default PostForm
+export default connect(null, { addPost })(PostForm);

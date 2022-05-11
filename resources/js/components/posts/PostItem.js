@@ -1,17 +1,20 @@
-import React, { Fragment } from 'react'
- 
-const PostItem = () => { 
-  return (
-      <Fragment>
+import React,{Fragment} from 'react'
+import {connect} from 'react-redux';
+import {deletePost} from '../../actions/post';
+import PropTypes from 'prop-types';
+
+const PostItem = ({post:{username,post,id},deletePost}) => {
+    return (
+        <Fragment>
             <div>
                 <ul className="collection mx-3">
                     <li className="collection-item avatar">
                         <i className="material-icons circle">person_outline</i>
-                        <span className="title">username</span>
-                        <p>post</p>
+                        <span className="title">{username}</span>
+                        <p>{post}</p>
                         <a
                             className="secondary-content waves-effect waves-light  red darken-3 btn"
-                         
+                        onClick={()=>deletePost(id)}
                         >
                             <i className="material-icons left">
                                 delete_forever
@@ -22,7 +25,11 @@ const PostItem = () => {
                 </ul>
             </div>
         </Fragment>
-  )
+
+    )
 }
- 
-export default PostItem
+PostItem.propTypes = {
+    deletePost: PropTypes.func.isRequired,
+}
+
+export default connect(null,{deletePost})(PostItem);
