@@ -1,14 +1,16 @@
 import axios from "axios";
 import  {GET_POSTS, POST_ERROR, ADD_POST, DELETE_POST} from "./types";
 
-export const getPosts = () => async dispatch => 
-{
+export const getPosts = () => async dispatch =>  
+{ 
+    
+    
     try {
         const res = await axios.get('/api/posts');
         dispatch({
             type:GET_POSTS,
             payload:res.data
-        })
+        });
     } catch (err) {
         dispatch({
             type:POST_ERROR,
@@ -16,7 +18,7 @@ export const getPosts = () => async dispatch =>
                 msg:err.response.statusText,
                 status:err.response.status
             }
-        })
+        });
     }
 }
 
@@ -55,6 +57,7 @@ export const deletePost = postId => async dispatch =>
             type:DELETE_POST,
             payload:postId
         })
+        
     } catch (err) {
         dispatch({
             type:POST_ERROR,

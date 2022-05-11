@@ -6,11 +6,17 @@ import Posts from './posts/Posts';
 import store from '../store';
 import {Provider} from 'react-redux';
 import {getPosts} from '../actions/post';
+ 
+ 
+ 
+ 
 
 const Example = () => {
+    
     useEffect(() => {
         store.dispatch(getPosts());
     }, []);
+    
     return (
         <Provider store={store}>
             <Fragment>
@@ -22,7 +28,7 @@ const Example = () => {
             </Fragment>
         </Provider>
     );
-}
+};
 
 export default Example;
 

@@ -1,7 +1,8 @@
 import React from "react";
+  
 
 const Navbar = () => {
-    return (
+    return ( 
         <div>
             <nav>
                 <div className="nav-wrapper px-5  teal lighten-2">
@@ -20,6 +21,8 @@ const Navbar = () => {
             </nav>
         </div>
     );
+    
 }
+
 
 export default Navbar;
