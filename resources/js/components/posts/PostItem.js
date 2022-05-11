@@ -2,7 +2,7 @@ import React,{Fragment} from 'react'
 import {connect} from 'react-redux';
 import {deletePost} from '../../actions/post';
 import PropTypes from 'prop-types';
-
+ 
 const PostItem = ({post:{username,post,id},deletePost}) => {
     return ( 
         <Fragment>
