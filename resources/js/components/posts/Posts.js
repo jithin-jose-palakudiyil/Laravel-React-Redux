@@ -3,7 +3,7 @@ import PostItem from './PostItem';
 import {connect} from "react-redux";
 import PropTypes from "prop-types";
 import {getPosts} from "../../actions/post";
-
+  
 
 const Posts = ({post: {posts,loading},getPosts})=> {
     useEffect(() => {

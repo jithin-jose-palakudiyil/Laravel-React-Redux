@@ -2,7 +2,7 @@ import React, { Fragment, useState } from "react";
 import propTypes from "prop-types";
 import { connect } from "react-redux";
 import { addPost } from "../../actions/post";
-
+ 
 const PostForm = ({ addPost }) => {
     const [formData, setFormData] = useState(
         {

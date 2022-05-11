@@ -4,7 +4,7 @@ import {deletePost} from '../../actions/post';
 import PropTypes from 'prop-types';
 
 const PostItem = ({post:{username,post,id},deletePost}) => {
-    return (
+    return ( 
         <Fragment>
             <div>
                 <ul className="collection mx-3">
