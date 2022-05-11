@@ -3,6 +3,7 @@ import  {GET_POSTS, POST_ERROR, ADD_POST, DELETE_POST} from "./types";
 
 export const getPosts = () => async dispatch =>  
 { 
+    
     try {
         const res = await axios.get('/api/posts');
         dispatch({

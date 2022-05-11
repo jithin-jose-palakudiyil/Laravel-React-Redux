@@ -7,6 +7,7 @@ import store from '../store';
 import {Provider} from 'react-redux';
 import {getPosts} from '../actions/post';
 
+
 const Example = () => {
     useEffect(() => {
         store.dispatch(getPosts());
