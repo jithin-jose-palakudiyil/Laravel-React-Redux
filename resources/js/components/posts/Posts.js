@@ -31,6 +31,7 @@ const Posts = ({post: {posts,loading},getPosts})=> {
                 </div>
 
         )
+        
 
 }
    
@@ -38,6 +39,7 @@ Posts.propTypes = {
     post: PropTypes.object.isRequired,
     getPosts:PropTypes.func.isRequired,
 };
+
 
 const mapStateToProps = state =>  ({
     post: state.post

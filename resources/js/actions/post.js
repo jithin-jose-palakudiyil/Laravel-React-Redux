@@ -57,6 +57,7 @@ export const deletePost = postId => async dispatch =>
             type:DELETE_POST,
             payload:postId
         })
+        
     } catch (err) {
         dispatch({
             type:POST_ERROR,

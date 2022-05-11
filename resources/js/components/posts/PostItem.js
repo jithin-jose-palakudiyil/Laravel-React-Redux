@@ -20,6 +20,7 @@ const PostItem = ({post:{username,post,id},deletePost}) => {
                             className="secondary-content waves-effect waves-light  red darken-3 btn"
                         onClick={()=>deletePost(id)}
                         >
+                            
                             <i className="material-icons left">
                                 delete_forever
                             </i>

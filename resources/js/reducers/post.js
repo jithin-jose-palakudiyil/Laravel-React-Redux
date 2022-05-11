@@ -13,11 +13,14 @@ export default function(state=initialState,action)
 
     switch(type)
     {
+
         case GET_POSTS:
         return{
+
             ...state,
             posts:payload,
             loading:false
+            
         }
         case ADD_POST:
             return{

@@ -47,8 +47,10 @@ const PostForm = ({ addPost }) => {
                                 value={username}
                                 onChange={e => onChange(e)}
                             />
+
                             <label htmlFor="icon_prefix">Enter your Name</label>
                         </div>
+                        
                         <div className="input-field col s12">
                             <i className="material-icons prefix">sms</i>
 
