@@ -7,9 +7,11 @@ import {getPosts} from "../../actions/post";
 
 
 const Posts = ({post: {posts,loading},getPosts})=> {
+    
+    
     useEffect(() => {
         getPosts();
-    }, [getPosts])
+    }, [getPosts]);
 
     return  loading ?
             (<div className="progress">
@@ -31,13 +33,14 @@ const Posts = ({post: {posts,loading},getPosts})=> {
         )
 
 }
+   
 Posts.propTypes = {
     post: PropTypes.object.isRequired,
     getPosts:PropTypes.func.isRequired,
-}
+};
 
 const mapStateToProps = state =>  ({
     post: state.post
-})
+});
 
 export default connect(mapStateToProps, {getPosts})(Posts);

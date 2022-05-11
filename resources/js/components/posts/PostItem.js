@@ -3,9 +3,12 @@ import {connect} from 'react-redux';
 import {deletePost} from '../../actions/post';
 import PropTypes from 'prop-types';
  
+ 
+ 
 
 const PostItem = ({post:{username,post,id},deletePost}) => {
     return ( 
+            
         <Fragment>
             <div>
                 <ul className="collection mx-3">
@@ -29,6 +32,7 @@ const PostItem = ({post:{username,post,id},deletePost}) => {
 
     )
 }
+
 PostItem.propTypes = {
     deletePost: PropTypes.func.isRequired,
 }

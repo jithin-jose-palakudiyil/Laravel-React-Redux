@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import { addPost } from "../../actions/post";
   
 
+
+
 const PostForm = ({ addPost }) => {
     const [formData, setFormData] = useState(
         {
@@ -11,7 +13,8 @@ const PostForm = ({ addPost }) => {
             username: ""
         },
         []
-    );
+    ); 
+    
     const { username, post } = formData;
 
     const onChange = e =>
@@ -73,6 +76,8 @@ const PostForm = ({ addPost }) => {
         </Fragment>
     );
 };
+
+
 PostForm.propTypes = {
     addPost: propTypes.func.isRequired
 };
